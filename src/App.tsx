@@ -1,19 +1,16 @@
-import * as React from 'react'
+import * as React from 'react';
 import './App.css';
-import { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
-import {
-  Routes,
-  Route
-} from "react-router-dom";
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+import { Routes, Route } from 'react-router-dom';
 import NavBar from 'components/NavBar';
 import LandingPage from 'components/LandingPage';
-import Cart from 'components/Cart';
+// import CartPage from 'components/CartPage';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
   /* 다른 스타일들 */
-`
+`;
 
 const App = () => (
   <React.Fragment>
@@ -21,11 +18,11 @@ const App = () => (
     <div>
       <NavBar />
       <Routes>
-        <Route path='/' element={<LandingPage />} />
-        <Route path='/cart' element={<Cart />} />
+        <Route path="/" element={<LandingPage />} />
+        {/* <Route path="/cart" element={<CartPage />} /> */}
       </Routes>
     </div>
   </React.Fragment>
-)
+);
 
-export default App
+export default App;

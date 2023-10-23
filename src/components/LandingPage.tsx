@@ -104,6 +104,7 @@ function LandingPage() {
                 formatRevenue={formatRevenue}
                 totalPrice={totalPrice}
             />
+
         </div>
     );
 }

@@ -19,7 +19,12 @@ function ProductList({
       return text;
     }
     const regex = new RegExp(`(${searchTerm})`, 'gi');
-    return text.replace(regex, (match) => `<mark>${match}</mark>`);
+    return text.split(regex).map((chunk, index) => {
+      if (index % 2 === 1) {
+        return <span className='highlight' key={index}>{chunk}</span>;
+      }
+      return chunk;
+    });
   };
 
   const filteredProducts = products.filter(
@@ -40,10 +45,8 @@ function ProductList({
         {filteredProducts.map((product, index) => (
           <li key={index}>
             <img src={`/images/${product.photo}`} alt={product.title} />
-            <h4
-              dangerouslySetInnerHTML={{ __html: highlightSearchTerm(`[${product.brand}]`) }}
-            ></h4>
-            <p dangerouslySetInnerHTML={{ __html: highlightSearchTerm(product.title) }}></p>
+            <h4>{highlightSearchTerm(`[${product.brand}]`)}</h4>
+            <p>{highlightSearchTerm(product.title)}</p>
             <h3>{formatRevenue(product.price)}원</h3>
             <button
               id="add-remove-toggle"

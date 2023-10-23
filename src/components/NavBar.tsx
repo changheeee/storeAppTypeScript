@@ -7,7 +7,9 @@ function NavBar() {
       <h1>
         <Link to="/">집꾸미기</Link>
       </h1>
-      <Link to="/cart">Cart</Link>
+      <span>
+        <Link to="/cart">Cart</Link>
+      </span>
     </div>
   );
 }

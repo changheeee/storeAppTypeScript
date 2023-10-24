@@ -38,7 +38,7 @@ function ReceiptModal({ cart, formatRevenue, totalPrice, closeModal, ordererName
               return (
                 <li key={index}>
                   <span className='title'>{cartProduct.title}</span>
-                  <span className='quantity'>{cartProduct.quantity}</span>
+                  <span className='quantity'>{cartProduct.quantity || 1}</span>
                   <strong className='total-price'>{productTotalPrice}원</strong>
                 </li>
               )

@@ -46,14 +46,12 @@ function Cart({ cart, formatRevenue, decreaseQuantity, increaseQuantity, totalPr
                                     </li>
                                     <li>
                                         <button
-                                            className="quantity-button decrease-quantity"
                                             onClick={() => decreaseQuantity(cartProduct.id)}
                                         >
                                             -
                                         </button>
                                         <span>{quantity}</span>
                                         <button
-                                            className="quantity-button increase-quantity"
                                             onClick={() => increaseQuantity(cartProduct.id)}
                                         >
                                             +
@@ -65,7 +63,7 @@ function Cart({ cart, formatRevenue, decreaseQuantity, increaseQuantity, totalPr
                         );
                     })}
                 </ul>
-                <span className="totalPrice">주문합계:<strong>&nbsp;{formatRevenue(totalPrice)}&nbsp;</strong>  원</span>
+                <span className="totalPrice">총 가격:<strong>&nbsp;{formatRevenue(totalPrice)}&nbsp;</strong>  원</span>
             </div>
             <button className='order-btn' onClick={openModal}>주문하기</button>
 

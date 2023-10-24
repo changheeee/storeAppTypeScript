@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReceiptModal from './ReceiptModal';
 import { OrderModalProps } from 'type';
 
-function OrderModal({ cart, formatRevenue, totalPrice, closeModal, isModalOpen }: OrderModalProps) {
+function OrderModal({ cart, formatRevenue, totalPrice, closeModal }: OrderModalProps) {
     const [receiptModal, setReceiptModal] = useState(false);
     const [ordererName, setOrdererName] = useState('');
     const [ordererNumber, setOrdererNumber] = useState('');
@@ -29,7 +29,9 @@ function OrderModal({ cart, formatRevenue, totalPrice, closeModal, isModalOpen }
         }
     }
 
-    const openReceiptModal = () => {
+    const openReceiptModal = (e: React.FormEvent) => {
+        e.preventDefault(); // 이벤트의 기본 동작을 막음
+
         if (!nameError && !numberError) {
             setReceiptModal(true);
         }
@@ -41,7 +43,7 @@ function OrderModal({ cart, formatRevenue, totalPrice, closeModal, isModalOpen }
                 <h3 className='order-info'>주문자 정보 입력
                     <button className="modal-close" onClick={closeModal}>닫기 X</button>
                 </h3>
-                <form action='#' onSubmit={openReceiptModal}>
+                <form action='' onSubmit={openReceiptModal}>
                     <label>주문자명</label>
                     <input type="text" placeholder='이름을 입력하세요' required onChange={handleOrdererName} />
                     {nameError && <p className="error">{nameError}</p>}

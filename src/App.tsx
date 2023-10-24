@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './App.css';
+import './styles/App.css';
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import { Routes, Route } from 'react-router-dom';
@@ -10,6 +10,7 @@ import LandingPage from 'components/LandingPage';
 const GlobalStyle = createGlobalStyle`
   ${reset}
   /* 다른 스타일들 */
+   font-family: 'SUIT Variable', sans-serif;
 `;
 
 const App = () => (

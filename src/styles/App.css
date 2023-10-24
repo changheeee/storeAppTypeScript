@@ -1,6 +1,4 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -445,7 +443,7 @@ a {
 .modalItem li{
   display: flex;
   padding: 20px 0;
-  border-top: 1px dashed #888;
+  border-top: 1px dashed #ccc;
   font-size: 14px;
 }
 
